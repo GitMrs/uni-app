@@ -1,3 +1,24 @@
 {
+  "scrollIndicator": "none",
+  "bounce": "none",
+  "titleNView": {
+    "autoBackButton": false,
+    "backgroundColor": "#FFFFFF",
+    "buttons": [
+      {
+        "color": "#000000",
+        "float": "right",
+        "fontSize": "16px",
+        "text": "清除"
+      }
+    ],
+    "searchInput": {
+      "align": "left",
+      "placeholderColor": "#ccc",
+      "disabled": false,
+      "backgroundColor": "#fafafa",
+      "borderRadius": "4px"
+    }
+  },
   "usingComponents": {}
 }

@@ -1,2 +1,1 @@
-setCssToHead([".",[1],"nothing{ position: absolute; background: #fff; top: 0; left: 0; bottom: 0; right: 0; }\n.",[1],"nothing wx-image{ width: 60%; }\n",],undefined,{path:"./pages/index/index.wxss"})();
 document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/index/index.wxml') } }));

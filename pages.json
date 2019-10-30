@@ -1,98 +1,145 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"app-plus": { //配置app顶部
-					"scrollIndicator": "none", //顶部滚动
-					"bounce": "none", //没有反弹效果
-					"titleNView": { //顶部展示
-						"buttons": [{ //左右按钮
-								"color": "#f8b446", // 字体颜色
-								"colorPressed": "#888", // 按下去颜色
-								"float": "left", // 位置
-								"fontSize": "22px", //大小
-								"fontSrc": "./static/font/iconfont.ttf", // 引入字体库
-								"text": "\ue609"  //签到以\u开始
-							},
-							{
-								"color": "black",
-								"colorPressed": "#888",
-								"float": "right",
-								"fontSize": "22px",
-								"fontSrc": "./static/font/iconfont.ttf",
-								"text": "\ue684"
+    "pages" : [
+        //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+        {
+            "path" : "pages/index/index",
+            "style" : {
+                "app-plus" : {
+                    //配置app顶部
+                    "scrollIndicator" : "none", //顶部滚动
+                    "bounce" : "none", //没有反弹效果
+                    "titleNView" : {
+                        //顶部展示
+                        "buttons" : [
+                            {
+                                //左右按钮
+                                "color" : "#f8b446", // 字体颜色
+                                "colorPressed" : "#888", // 按下去颜色
+                                "float" : "left", // 位置
+                                "fontSize" : "22px", //大小
+                                "fontSrc" : "./static/font/iconfont.ttf", // 引入字体库
+                                "text" : "\ue609" //签到以\u开始
+                            },
+                            {
+                                "color" : "black",
+                                "colorPressed" : "#888",
+                                "float" : "right",
+                                "fontSize" : "22px",
+                                "fontSrc" : "./static/font/iconfont.ttf",
+                                "text" : "\ue684"
+                            }
+                        ],
+                        "searchInput" : {
+                            // 搜索框配置
+                            "align" : "center", //文本居中
+                            "backgroundColor" : "#fafafa", //背景色
+                            "borderRadius" : "4px", // 圆角
+                            "disabled" : "true", // 禁用
+                            "placeholder" : "请输入搜索内容", // 提示语
+                            "placeholderColor" : "#ccc" // 提示语颜色
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "path" : "pages/news/news",
+            "style" : {}
+        },
+        {
+            "path" : "pages/paper/paper",
+            "style" : {}
+        },
+        {
+            "path" : "pages/home/home",
+            "style" : {}
+        },
+        {
+            "path" : "pages/search/search",
+            "style" : {
+                "app-plus" : {
+                    "scrollIndicator" : "none",
+                    "bounce" : "none",
+                    "titleNView" : {
+                        "autoBackButton" : false, //删除左侧按钮
+                        "backgroundColor" : "#FFFFFF",
+                        "buttons" : [
+                            {
+                                "color" : "#000000",
+                                "float" : "right",
+                                "fontSize" : "16px",
+                                "text" : "清除"
+                            }
+                        ],
+                        "searchInput" : {
+                            "align" : "left",
+                            "placeholderColor" : "#ccc",
+                            "disabled" : false,
+                            "backgroundColor" : "#fafafa",
+                            "borderRadius" : "4px"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "path" : "pages/add-up/add-up",
+            "style" : {
+							"app-plus":{
+								"titleNView":false //禁用原生导航
 							}
-						],
-						"searchInput": { // 搜索框配置
-							"align": "center", //文本居中
-							"backgroundColor": "#fafafa", //背景色
-							"borderRadius": "4px", // 圆角
-							"disabled": "true", // 禁用
-							"placeholder": "请输入搜索内容", // 提示语
-							"placeholderColor": "#ccc" // 提示语颜色
 						}
-					}
-				}
-			}
-		},
-		{
-			"path": "pages/news/news",
-			"style": {}
-		}, {
-			"path": "pages/paper/paper",
-			"style": {}
-		}, {
-			"path": "pages/home/home",
-			"style": {}
-		}, {
-			"path": "pages/search/search",
-			"style": {}
-		}
-	],
-	"globalStyle": { //全局样式
-		"navigationBarTextStyle": "black", //文本颜色
-		"navigationBarTitleText": "uni-app", // 页面标题
-		"navigationBarBackgroundColor": "#fff", // 导航栏背景色
-		"backgroundColor": "#F8F8F8" //
-	},
-	"tabBar": {
-		"color": "#515151", //字体颜色
-		"selectedColor": "#f8b446", // 选中颜色
-		"backgroundColor": "#FFFFFF", //背景
-		"borderStyle": "black", // 边框
-		"list": [{ // 导航条目
-				"iconPath": "static/icon/index.png", // iocn图片 80*80
-				"selectedIconPath": "static/icon/indexSelect.png", // 选中icon
-				"text": "首页", //文本
-				"pagePath": "pages/index/index" //对应页面
-			},
-			{
-				"iconPath": "static/icon/news.png",
-				"selectedIconPath": "static/icon/newsSelect.png",
-				"text": "动态",
-				"pagePath": "pages/news/news"
-			},
-			{
-				"iconPath": "static/icon/paper.png",
-				"selectedIconPath": "static/icon/paperSelect.png",
-				"text": "消息",
-				"pagePath": "pages/paper/paper"
-			},
-			{
-				"iconPath": "static/icon/home.png",
-				"selectedIconPath": "static/icon/homeSelect.png",
-				"text": "我的",
-				"pagePath": "pages/home/home"
-			}
-		]
-	},
-	"condition": { //模式配置，仅开发期间生效
-		"current": 0, //当前激活的模式(list 的索引项)
-		"list": [{
-			"name": "", //模式名称
-			"path": "", //启动页面，必选
-			"query": "" //启动参数，在页面的onLoad函数里面得到
-		}]
-	}
+        }
+    ],
+    "globalStyle" : {
+        //全局样式
+        "navigationBarTextStyle" : "black", //文本颜色
+        "navigationBarTitleText" : "uni-app", // 页面标题
+        "navigationBarBackgroundColor" : "#fff", // 导航栏背景色
+        "backgroundColor" : "#F8F8F8" //
+    },
+    "tabBar" : {
+        "color" : "#515151", //字体颜色
+        "selectedColor" : "#f8b446", // 选中颜色
+        "backgroundColor" : "#FFFFFF", //背景
+        "borderStyle" : "black", // 边框
+        "list" : [
+            {
+                // 导航条目
+                "iconPath" : "static/icon/index.png", // iocn图片 80*80
+                "selectedIconPath" : "static/icon/indexSelect.png", // 选中icon
+                "text" : "首页", //文本
+                "pagePath" : "pages/index/index" //对应页面
+            },
+            {
+                "iconPath" : "static/icon/news.png",
+                "selectedIconPath" : "static/icon/newsSelect.png",
+                "text" : "动态",
+                "pagePath" : "pages/news/news"
+            },
+            {
+                "iconPath" : "static/icon/paper.png",
+                "selectedIconPath" : "static/icon/paperSelect.png",
+                "text" : "消息",
+                "pagePath" : "pages/paper/paper"
+            },
+            {
+                "iconPath" : "static/icon/home.png",
+                "selectedIconPath" : "static/icon/homeSelect.png",
+                "text" : "我的",
+                "pagePath" : "pages/home/home"
+            }
+        ]
+    },
+    "condition" : {
+        //模式配置，仅开发期间生效
+        "current" : 0, //当前激活的模式(list 的索引项)
+        "list" : [
+            {
+                "name" : "", //模式名称
+                "path" : "", //启动页面，必选
+                "query" : "" //启动参数，在页面的onLoad函数里面得到
+            }
+        ]
+    }
 }

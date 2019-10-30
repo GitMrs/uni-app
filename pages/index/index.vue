@@ -322,6 +322,14 @@
 				url:"../search/search"
 			})
 		},
+		onNavigationBarButtonTap(e){
+			if(e.index == 1){
+				uni.navigateTo({
+					url:"../add-up/add-up"
+				})
+			}
+			
+		},
 		onLoad() {
 			uni.getSystemInfo({
 				success: (res) => {

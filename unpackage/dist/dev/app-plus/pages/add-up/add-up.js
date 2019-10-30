@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"uni-textarea{ border: 1px solid #ccc; }\n",],undefined,{path:"./pages/add-up/add-up.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/add-up/add-up.wxml') } }));
