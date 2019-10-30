@@ -9,3 +9,9 @@
 		```
 	3. 在App.vue 里面引入自定义图标库；
 			登录阿里巴巴吧图标库，找到下载引入css
+	4. 在pages里面创建页面 index、paper、news、home、search
+	5. 编写底部导航栏
+	6. 配置pages.json
+			```
+				
+			```
