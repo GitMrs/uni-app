@@ -2,6 +2,7 @@
   "titleNView": false,
   "usingComponents": {
     "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
-    "load-images": "/components/upload-images"
+    "load-images": "/components/upload-images",
+    "uni-popup": "/components/uni-popup/uni-popup"
   }
 }

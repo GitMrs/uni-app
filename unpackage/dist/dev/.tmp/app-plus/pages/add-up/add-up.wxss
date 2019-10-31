@@ -2,4 +2,22 @@
 .uni-textarea{
 	border: 1px solid #ccc;
 }
+.popup_wrap{
+	width: 80%;
+	font-size: 22rpx;
+	text-align: left;
+}
+.popup_wrap view{
+	width: 100%;
+	text-align: left;
+	/* align-content: flex-start; */
+}
+.popup_wrap>view image{
+	width: 75%;
+}
+.popup_wrap view button{
+	background: #F0AD4E;
+	color: #FFFFFF;
+	margin-top: 30rpx;
+}
 

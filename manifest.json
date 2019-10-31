@@ -67,7 +67,7 @@
 		"setting": {
 			"urlCheck": false
 		},
-		"usingComponents": true
+		"usingComponents": true //开启小程序模板编译
 	},
     "mp-alipay" : {
         "usingComponents" : true

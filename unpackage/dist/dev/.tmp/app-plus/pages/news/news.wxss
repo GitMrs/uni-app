@@ -1,0 +1,36 @@
+
+.nav-left,
+.nav-right {
+	font-size: 40rpx;
+}
+.nav-left {
+	margin-left: 30rpx;
+	color: #FF9619;
+}
+.nav-bar-bar {
+	width: 100%;
+	margin-left: 22rpx;
+	position: relative;
+}
+.nav-bar-bar view {
+	padding: 0 15rpx;
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #969696;
+}
+.active {
+	color: #333 !important;
+}
+.nav-tab-bar-line {
+	border-bottom: 5rpx solid #FEDE33;
+	border-top: 5rpx solid #FEDE33;
+	width: 40rpx;
+	border-radius: 20rpx;
+	position: absolute;
+	bottom: -3rpx;
+	display: none;
+}
+.active .nav-tab-bar-line {
+	display: block;
+}
+
