@@ -88,7 +88,7 @@
 }
 .uni-popup__wrapper.uni-custom.center .uni-popup__wrapper-box {
 	position: relative;
-	max-width: 80%;
+	max-width: 90%;
 	max-height: 80%;
 	overflow-y: scroll
 }
@@ -96,6 +96,7 @@
 .uni-popup__wrapper.uni-custom.top .uni-popup__wrapper-box {
 	width: 100%;
 	max-height: 500px;
+	text-align: left;
 	overflow-y: scroll
 }
 .uni-popup__wrapper.uni-bottom,

@@ -30,7 +30,7 @@
         "iconPath": "static/icon/news.png",
         "selectedIconPath": "static/icon/newsSelect.png",
         "text": "动态",
-        "pagePath": "pages/add-up/add-up"
+        "pagePath": "pages/news/news"
       },
       {
         "iconPath": "static/icon/paper.png",
@@ -47,5 +47,5 @@
     ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap92.json"
 }

@@ -1,50 +1,104 @@
 <template>
 	<view>
-		<uni-nav-bar :statusBar="true" @click-right="add">
-			<!-- 左边 -->
-			<block slot="left">
-				<view class="nav-left">
-					<view class="icon iconfont icon-qiandao"></view>
-				</view>
-			</block>
-			<!-- 中间 -->
-			<view class="u-f-aj nav-bar-bar">
-				<block v-for="(item,index) in tabBars" :key="index">
-					<view class="u-f-aj" @tap="changeTab(index)" :class="{active:tabIndex === index}">{{ item.name }}
-						<view class="nav-tab-bar-line"></view>
-					</view>
-				</block>
-			</view>
-			<!-- 右边 -->
-			<block slot="right">
-				<view class="nav-right">
-					<view class="icon iconfont icon-bianji"></view>
-				</view>
-			</block>
-		</uni-nav-bar>
-		
-		<block v-for="(item,index) in list" :key="index">
-			<commomList :key="index" :item="item"></commomList>
-		</block>
-		
-		
-		
-		
-		
+		<newsTabBar :tabBars="tabBars" :tabIndex="tabIndex" @change-tab-index="changeTab" />
+
+		<view class="uni-tab-bar">
+			<swiper class="swiper-box" :style="{height:swiperHeight + 'px'}" :current="tabIndex" @change="changeSwiper">
+				<!-- 关注 -->
+				<swiper-item>
+					<scroll-view class="list" scroll-y @scrolltolower="loadMore(0)">
+						<block v-for="(item,index) in guanzhu.list" :key="index">
+							<commomList :item="item" :index="index"></commomList>
+						</block>
+						<LoadMore :loadText="guanzhu.loadText" />
+					</scroll-view>
+				</swiper-item>
+				<!-- 话题 -->
+				<swiper-item>
+					<scroll-view class="list" scroll-y @scrolltolower="loadMore(1)">
+						<!-- 搜索 -->
+						<view class="search-input">
+							<input type="text" value="" class="uni-input" placeholder="搜索内容" placeholder-class="topic-search icon iconfont icon-sousuo" />
+						</view>
+						<!-- 轮播图 -->
+						<swiper class="topic-swiper" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
+							<swiper-item v-for="(item,index) in topic.swiper" :key="index">
+								<image :src="item.src" mode="widthFix" lazy-load></image>
+							</swiper-item>
+						</swiper>
+
+						<!-- 热门分类 -->
+						<TopicNav :topicNav="topic.nav" />
+						<!-- 最近更新 -->
+						<view class="topic-new">
+							<view>最近更新</view>
+							<view class="topic-list u-f animated fadeInLeft" v-for="(item,index) in huati.list" :key="index">
+								<image :src="item.titlepic" mode="widthFix" lazy-load></image>
+								<view class="">
+									<view># {{item.title}} #</view>
+									<view>{{item.desc}}</view>
+									<view>动态 {{item.totalnum}} 今日 {{item.todayNum}}</view>
+								</view>
+							</view>
+							<LoadMore :loadText="huati.loadText"></LoadMore>
+						</view>
+					</scroll-view>
+
+				</swiper-item>
+			</swiper>
 		</view>
+
+	</view>
 </template>
 
 <script>
-	import uniNavBar from "../../components/uni-nav-bar/uni-nav-bar.vue";
+	import newsTabBar from "../../components/news-tab-bar.vue";
 	import commomList from '../../components/common-list.vue';
+	import LoadMore from "../../components/commom/load-more.vue";
+	import TopicNav from "../../components/topic-nav.vue"
 	export default {
 		components: {
-			uniNavBar,
-			commomList
+			newsTabBar,
+			commomList,
+			LoadMore,
+			TopicNav
 		},
 		data() {
 			return {
 				tabIndex: 0,
+				swiperHeight: 500,
+				topic: {
+					nav: [{
+							name: "最新"
+						},
+						{
+							name: "故事"
+						},
+						{
+							name: "新闻"
+						},
+						{
+							name: "时尚"
+						},
+						{
+							name: "游戏"
+						},
+						{
+							name: "打卡"
+						}
+					],
+					swiper: [{
+							src: "../../static/banner1.jpg",
+						},
+						{
+							src: "../../static/banner2.jpg",
+						},
+						{
+							src: "../../static/banner3.jpg",
+						}
+					]
+				},
+
 				tabBars: [{
 						name: "关注"
 					},
@@ -52,112 +106,279 @@
 						name: "话题"
 					}
 				],
-				list: [{
-						userpic: "../../static/topicpic/4.jpeg",
-						username: "昵称",
-						sex: 0, // 0 男，1女
-						age: '25',
-						isguanzhu: false,
-						title: "图文",
-						img:true,
-						titlepic: "../../static/datapic/22.jpg",
-						video: false,
-						share: false,
-						addree:"	深圳 龙岗",
-						sharenum: 20,
-						commentnum: 30,
-						goodnum: 20
-					},
-					{
-						userpic: "../../static/topicpic/4.jpeg",
-						username: "昵称",
-						sex: 0, // 0 男，1女
-						age: '25',
-						isguanzhu: false,
-						title: "视频",
-						titlepic: "../../static/datapic/22.jpg",
-						video: {
-							lonknum: '20w',
-							long: "2:47"
+				huati: {
+					loadText: "上拉加载更多",
+					list: [{
+							titlepic: "../../static/demo10.jpg",
+							title: "话题名称",
+							desc: "我是话题描述",
+							totalnum: "100",
+							todayNum: '10'
 						},
-						share: false,
-						addree:"	深圳 龙岗",
-						sharenum: 20,
-						commentnum: 30,
-						goodnum: 20
-					},
-					{
-						userpic: "../../static/topicpic/4.jpeg",
-						username: "昵称",
-						sex: 0, // 0 男，1女
-						age: '25',
-						isguanzhu: false,
-						title: "分享页",
-						video: false,
-						share: {
-							title: "分享",
-							pic: "../../static/datapic/22.jpg"
+						{
+							titlepic: "../../static/demo10.jpg",
+							title: "话题名称",
+							desc: "我是话题描述",
+							totalnum: "100",
+							todayNum: '10'
+						}, {
+							titlepic: "../../static/demo10.jpg",
+							title: "话题名称",
+							desc: "我是话题描述",
+							totalnum: "100",
+							todayNum: '10'
 						},
-						addree:"	深圳 龙岗",
-						sharenum: 20,
-						commentnum: 30,
-						goodnum: 20
-					}
-				]
+						{
+							titlepic: "../../static/demo10.jpg",
+							title: "话题名称",
+							desc: "我是话题描述",
+							totalnum: "100",
+							todayNum: '10'
+						}, {
+							titlepic: "../../static/demo10.jpg",
+							title: "话题名称",
+							desc: "我是话题描述",
+							totalnum: "100",
+							todayNum: '10'
+						}, {
+							titlepic: "../../static/demo10.jpg",
+							title: "话题名称",
+							desc: "我是话题描述",
+							totalnum: "100",
+							todayNum: '10'
+						}
+					]
+				},
+				guanzhu: {
+					loadText: "上拉加载更多",
+					list: [{
+							userpic: "../../static/topicpic/4.jpeg",
+							username: "昵称",
+							sex: 0, // 0 男，1女
+							age: '25',
+							isguanzhu: false,
+							title: "图文",
+							type: 0, //0 为文字，1 为图文，2 为视频 3，分享
+							img: true,
+							titlepic: "../../static/datapic/22.jpg",
+							video: false,
+							share: false,
+							addree: "	深圳 龙岗",
+							sharenum: 20,
+							commentnum: 30,
+							goodnum: 20
+						},
+						{
+							userpic: "../../static/topicpic/4.jpeg",
+							username: "昵称",
+							sex: 0, // 0 男，1女
+							age: '25',
+							isguanzhu: false,
+							title: "图文",
+							type: 1,
+							img: true,
+							titlepic: "../../static/datapic/22.jpg",
+							video: false,
+							share: false,
+							addree: "	深圳 龙岗",
+							sharenum: 20,
+							commentnum: 30,
+							goodnum: 20
+						},
+
+						{
+							userpic: "../../static/topicpic/4.jpeg",
+							username: "昵称",
+							sex: 0, // 0 男，1女
+							age: '25',
+							isguanzhu: false,
+							title: "图文",
+							type: 1,
+							img: true,
+							titlepic: "../../static/datapic/22.jpg",
+							video: false,
+							share: false,
+							addree: "	深圳 龙岗",
+							sharenum: 20,
+							commentnum: 30,
+							goodnum: 20
+						},
+						{
+							userpic: "../../static/topicpic/4.jpeg",
+							username: "昵称",
+							sex: 0, // 0 男，1女
+							age: '25',
+							isguanzhu: false,
+							type: 2,
+							title: "视频",
+							titlepic: "../../static/datapic/22.jpg",
+							video: {
+								lonknum: '20w',
+								long: "2:47"
+							},
+							share: false,
+							addree: "	深圳 龙岗",
+							sharenum: 20,
+							commentnum: 30,
+							goodnum: 20
+						},
+						{
+							userpic: "../../static/topicpic/4.jpeg",
+							username: "昵称",
+							sex: 0, // 0 男，1女
+							age: '25',
+							isguanzhu: false,
+							title: "分享页",
+							type: 3,
+							video: false,
+							share: {
+								title: "分享",
+								pic: "../../static/datapic/22.jpg"
+							},
+							addree: "	深圳 龙岗",
+							sharenum: 20,
+							commentnum: 30,
+							goodnum: 20
+						}
+					]
+				}
 			}
+		},
+		onLoad() {
+			uni.getSystemInfo({
+				success: (res) => {
+					let height = res.windowHeight - uni.upx2px(100);
+					this.swiperHeight = height;
+					console.log(this.swiperHeight)
+				}
+			})
 		},
 		methods: {
 			changeTab(index) {
 				this.tabIndex = index;
 			},
-			add() {
-				uni.navigateTo({
-					url: "../add-up/add-up"
-				})
-			}
+			changeSwiper(e) {
+				this.tabIndex = e.detail.current;
+			},
+			//上拉加载更多
+			loadMore(type) {
+				console.log(111)
+				if (type === 0) {
+					if (this.guanzhu.loadText != '上拉加载更多') {
+						return
+					}
+					console.log("222")
+					this.guanzhu.loadText = "加载中。。。。"
+					setTimeout(() => {
+						//加载完成
+						let obj = {
+							userpic: "../../static/topicpic/4.jpeg",
+							username: "昵称",
+							sex: 0, // 0 男，1女
+							age: '25',
+							isguanzhu: false,
+							type: 2,
+							title: "视频",
+							titlepic: "../../static/datapic/22.jpg",
+							video: {
+								lonknum: '20w',
+								long: "2:47"
+							},
+							share: false,
+							addree: "	深圳 龙岗",
+							sharenum: 20,
+							commentnum: 30,
+							goodnum: 20
+						}
+						this.guanzhu.list.push(obj)
+
+						this.guanzhu.loadText = "上拉加载更多"
+					}, 1000)
+
+				} else {
+					if (this.huati.loadText != '上拉加载更多') {
+						return
+					}
+					console.log("222")
+					this.huati.loadText = "加载中。。。。"
+					setTimeout(() => {
+						//加载完成
+						let obj = {
+							titlepic: "../../static/demo10.jpg",
+							title: "话题名称",
+							desc: "我是话题描述",
+							totalnum: "100",
+							todayNum: '10'
+						}
+
+						this.huati.list.push(obj)
+
+						this.huati.loadText = "上拉加载更多"
+					}, 1000)
+
+				}
+
+				// this.guanzhu.loadText = "没有数据了"
+			},
 		}
 	}
 </script>
-
 <style>
-	.nav-left,
-	.nav-right {
-		font-size: 40upx;
+	.search-input {
+		padding: 20upx;
 	}
 
-	.nav-left {
-		margin-left: 30upx;
-		color: #FF9619;
+	.search-input>input {
+		background: #F4F4F4;
+		border-radius: 10upx;
 	}
 
-	.nav-bar-bar {
+	.topic-search {
+		display: flex;
+		justify-content: center;
+		font-size: 28upx;
+	}
+
+	.topic-swiper {
+		padding: 0 20upx 20upx;
 		width: 100%;
-		margin-left: 22upx;
-		position: relative;
+
 	}
 
-	.nav-bar-bar view {
-		padding: 0 15upx;
+	.topic-swiper image {
+		width: 100%;
+		border-radius: 10upx;
+	}
+
+	.topic-new {
+		padding: 20upx;
+
+	}
+
+	.topic-new>view {
+		padding-bottom: 10upx;
 		font-size: 32upx;
-		font-weight: bold;
-		color: #969696;
 	}
 
-	.active {
-		color: #333 !important;
+	.topic-list {
+		padding: 10upx 0;
+		border-bottom: 1px solid #eee;
 	}
 
-	.nav-tab-bar-line {
-		border-bottom: 5upx solid #FEDE33;
-		border-top: 5upx solid #FEDE33;
-		width: 40upx;
-		border-radius: 20upx;
-		position: absolute;
-		bottom: -3upx;
-		display: none;
+	.topic-list image {
+		width: 200upx;
+		height: 200upx;
+		border-radius: 10upx;
+		margin-right: 20upx;
+		flex-shrink: none;
 	}
 
-	.active .nav-tab-bar-line {
-		display: block;
+	.topic-list>view {
+		color: #9E9E9E;
+	}
+
+	.topic-list>view>view:first-child {
+		color: #000000;
+		font-size: 32upx;
 	}
 </style>

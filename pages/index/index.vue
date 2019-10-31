@@ -343,6 +343,7 @@
 		methods: {
 			//上拉加载更多
 			loadMore(index){
+				console.log("11")
 				if(this.newsList[index].loadText != '上拉加载更多') {return}
 					this.newsList[index].loadText = "加载中。。。。"
 				setTimeout(() => {

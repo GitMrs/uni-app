@@ -1,5 +1,5 @@
 <template>
-	<uview class="commom-list u-f animated fadeIn">
+	<view class="commom-list u-f animated fadeIn">
 		<view class="commom-list-l">
 			<image :src="item.userpic" mode="widthFix" lazy-load></image>
 		</view>
@@ -17,14 +17,24 @@
 			{{item.title}}
 			</view>
 			<view class="u-f-aj">
-				<block v-if="item.video">
+				<block v-if="item.type === 0">
+					<view class="u-f-aj">
+						<view class="">
+							{{item.title}}
+						</view>
+					</view>
+				</block>
+				<block v-if="item.type === 1">
+					 <image :src="item.titlepic" mode="widthFix" lazy-load> </image>
+				</block>
+				<block v-if="item.type === 2">
 					<image :src="item.titlepic" mode="widthFix" lazy-load> </image>
 					<view class="commom-list-play icon iconfont icon-bofang"></view>
 						<view class="commom-list-playinfo">
-							{{item.video.looknum}} 次播放 {{item.video.long}}
+							{{item.video.lonknum}} 次播放 {{item.video.long}}
 						</view> 
 				</block>
-				<block v-if="item.share">
+				<block v-if="item.type === 3">
 					<view class="commom-list-share u-f-aj">
 						<image :src="item.share.pic" mode="widthFix" lazy-load></image>
 						<view class="">
@@ -32,9 +42,7 @@
 						</view>
 					</view>
 				</block>
-				<block v-if="item.img">
-					 <image :src="item.titlepic" mode="widthFix" lazy-load> </image>
-				</block>
+			
 				<!-- 图片 -->
 				<!-- <image src="../../static/datapic/22.jpg" mode="widthFix" lazy-load> </image> -->
 				<!-- 视频 -->
@@ -67,15 +75,19 @@
 				</view>
 			</view>
 		</view>
-	</uview>
+	</view>
 
 </template>
 
 <script>
 	export default {
 		props:{
-			key:Number,
-			item:Object
+			index:{
+				type:Number
+			},
+			item:{
+				type:Object
+			}
 		},
 		data() {
 			return {
