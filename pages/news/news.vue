@@ -32,14 +32,9 @@
 						<!-- 最近更新 -->
 						<view class="topic-new">
 							<view>最近更新</view>
-							<view class="topic-list u-f animated fadeInLeft" v-for="(item,index) in huati.list" :key="index">
-								<image :src="item.titlepic" mode="widthFix" lazy-load></image>
-								<view class="">
-									<view># {{item.title}} #</view>
-									<view>{{item.desc}}</view>
-									<view>动态 {{item.totalnum}} 今日 {{item.todayNum}}</view>
-								</view>
-							</view>
+							<block v-for="(item,index) in huati.list" :key="index">
+								<topicList :item="item" :index="index" />
+							</block>
 							<LoadMore :loadText="huati.loadText"></LoadMore>
 						</view>
 					</scroll-view>
@@ -55,13 +50,15 @@
 	import newsTabBar from "../../components/news-tab-bar.vue";
 	import commomList from '../../components/common-list.vue';
 	import LoadMore from "../../components/commom/load-more.vue";
-	import TopicNav from "../../components/topic-nav.vue"
+	import TopicNav from "../../components/topic-nav.vue";
+	import topicList from "../../components/topic-list.vue";
 	export default {
 		components: {
 			newsTabBar,
 			commomList,
 			LoadMore,
-			TopicNav
+			TopicNav,
+			topicList
 		},
 		data() {
 			return {
@@ -360,25 +357,5 @@
 		font-size: 32upx;
 	}
 
-	.topic-list {
-		padding: 10upx 0;
-		border-bottom: 1px solid #eee;
-	}
 
-	.topic-list image {
-		width: 200upx;
-		height: 200upx;
-		border-radius: 10upx;
-		margin-right: 20upx;
-		flex-shrink: none;
-	}
-
-	.topic-list>view {
-		color: #9E9E9E;
-	}
-
-	.topic-list>view>view:first-child {
-		color: #000000;
-		font-size: 32upx;
-	}
 </style>

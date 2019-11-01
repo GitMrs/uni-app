@@ -1,5 +1,5 @@
 <template>
-	<view class="commom-list u-f animated fadeIn">
+	<view class="commom-list u-f animated fadeInLeft">
 		<view class="commom-list-l">
 			<image :src="item.userpic" mode="widthFix" lazy-load></image>
 		</view>
@@ -7,7 +7,7 @@
 			<view class="u-f-aj u-f-jsb">
 				<view class="u-f-aj">
 					<view>{{item.username}}</view>
-					<view class="tag-sex icon iconfont" :class="item.sex === 0 ? 'icon-nan' : 'icon-nv'">{{item.sex === 0 ? "男" : "女"}}</view>
+					<tag-sex-age :sex="item.sex" :age="item.age"></tag-sex-age>
 				</view>
 				<view class="u-f-aj">
 					<view class="icon iconfont icon-zengjia"></view>关注
@@ -80,6 +80,7 @@
 </template>
 
 <script>
+	import TagSexAge from './commom/tag-sex-age.vue';
 	export default {
 		props:{
 			index:{
@@ -88,6 +89,9 @@
 			item:{
 				type:Object
 			}
+		},
+		components:{
+			TagSexAge
 		},
 		data() {
 			return {
@@ -123,18 +127,9 @@
 		color: #999999;
 		font-size: 30upx;
 	}
-
-	.tag-sex {
-		background: #007AFF;
-		color: #FFFFFF;
-		height: 20upx;
-		font-size: 16upx;
-		padding: 2upx 15upx;
-		margin-left: 10upx;
-		border-radius: 20upx;
-		line-height: 22upx;
-	}
-
+		.commom-list-r>view:nth-of-type(1)>view:first-child>view:first-child{
+			margin-right: 10upx;
+		}
 	.commom-list-r>view:nth-of-type(1)>view:last-child {
 		background: #EEEEEE;
 		font-size: 26upx;

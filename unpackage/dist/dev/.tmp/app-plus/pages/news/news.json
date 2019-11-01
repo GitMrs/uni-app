@@ -4,6 +4,7 @@
     "news-tab-bar": "/components/news-tab-bar",
     "commom-list": "/components/common-list",
     "load-more": "/components/commom/load-more",
-    "topic-nav": "/components/topic-nav"
+    "topic-nav": "/components/topic-nav",
+    "topic-list": "/components/topic-list"
   }
 }

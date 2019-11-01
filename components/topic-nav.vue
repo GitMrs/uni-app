@@ -2,7 +2,7 @@
 		<view class="topic-nav">
 			<view class="u-f-aj u-f-jsb">
 				<view>热门分类</view>
-				<view class="u-f-aj">
+				<view class="u-f-aj" @tap="goTopicNav">
 					更多 <view class="icon iconfont icon-jinru"></view>
 				</view>
 			</view>
@@ -22,6 +22,13 @@
 		data() {
 			return {
 			};
+		},
+		methods:{
+			goTopicNav(){
+				uni.navigateTo({
+					url:"../../pages/topic-nav/topic-nav"
+				})
+			}
 		}
 	}
 </script>

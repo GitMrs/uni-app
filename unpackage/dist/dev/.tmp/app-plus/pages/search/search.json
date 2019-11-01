@@ -16,6 +16,7 @@
       "align": "left",
       "placeholderColor": "#ccc",
       "disabled": false,
+      "placeholder": "请输入搜索内容",
       "backgroundColor": "#fafafa",
       "borderRadius": "4px"
     }

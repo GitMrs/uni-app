@@ -15,7 +15,6 @@
 						<template v-else>
 							<Nothing />
 						</template>
-					
 					</scroll-view>
 				</swiper-item>
 			</swiper>

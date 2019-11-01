@@ -27,15 +27,8 @@
 		color: #999999;
 		font-size: 30rpx;
 }
-.tag-sex {
-		background: #007AFF;
-		color: #FFFFFF;
-		height: 20rpx;
-		font-size: 16rpx;
-		padding: 2rpx 15rpx;
-		margin-left: 10rpx;
-		border-radius: 20rpx;
-		line-height: 22rpx;
+.commom-list-r>view:nth-of-type(1)>view:first-child>view:first-child{
+			margin-right: 10rpx;
 }
 .commom-list-r>view:nth-of-type(1)>view:last-child {
 		background: #EEEEEE;

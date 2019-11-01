@@ -5,11 +5,14 @@
     "pages/paper/paper",
     "pages/home/home",
     "pages/search/search",
-    "pages/add-up/add-up"
+    "pages/add-up/add-up",
+    "pages/topic-nav/topic-nav",
+    "pages/topic-detail/topic-detail",
+    "pages/user-list/user-list"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
+    "navigationBarTitleText": "糗事百科",
     "navigationBarBackgroundColor": "#fff",
     "backgroundColor": "#F8F8F8"
   },
