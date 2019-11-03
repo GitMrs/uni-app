@@ -1,4 +1,5 @@
 {
+  "enablePullDownRefresh": true,
   "scrollIndicator": "none",
   "bounce": "none",
   "titleNView": {
@@ -21,5 +22,9 @@
       "borderRadius": "4px"
     }
   },
-  "usingComponents": {}
+  "usingComponents": {
+    "index-list": "/components/index-list",
+    "nothing": "/components/commom/nothing",
+    "load-more": "/components/commom/load-more"
+  }
 }

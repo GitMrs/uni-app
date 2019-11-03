@@ -82,11 +82,25 @@
 		},
 		{
 			"path": "pages/home/home",
-			"style": {}
+			"style": {
+				"navigationBarTitleText":"我的",
+				"app-plus":{
+					"scrollIndicator":"none",
+					"bounce":"none",
+					"titleNView":{
+						"buttons":[
+							{
+								"type":"menu"
+							}
+						]
+					}
+				}
+			}
 		},
 		{
 			"path": "pages/search/search",
 			"style": {
+				"enablePullDownRefresh":true, //开启下拉刷新
 				"app-plus": {
 					"scrollIndicator": "none",
 					"bounce": "none",
@@ -103,7 +117,7 @@
 							"align": "left",
 							"placeholderColor": "#ccc",
 							"disabled": false,
-							"placeholder":"请输入搜索内容",
+							"placeholder": "请输入搜索内容",
 							"backgroundColor": "#fafafa",
 							"borderRadius": "4px"
 						}
@@ -147,7 +161,7 @@
 			"style": {
 				"app-plus": {
 					"scrollIndicator": "none",
-					"animationType":"slide-in-left", //配置动画左侧划过去
+					"animationType": "slide-in-left", //配置动画左侧划过去
 					"bounce": "none",
 					"titleNView": {
 						"autoBackButton": false, //删除左侧按钮
@@ -162,15 +176,61 @@
 							"align": "left",
 							"placeholderColor": "#ccc",
 							"disabled": false,
-							"placeholder":"请输入搜索内容",
+							"placeholder": "请输入搜索内容",
 							"backgroundColor": "#fafafa",
 							"borderRadius": "4px"
 						}
 					}
 				}
 			}
+		}, {
+			"path": "pages/user-chat/user-chat",
+			"style": {
+				"navigationBarTitleText":"聊天页",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"color": "black",
+							"colorPressed": "#888",
+							"float": "right",
+							"fontSize": "22px",
+							"fontSrc": "./static/font/iconfont.ttf",
+							"text": "\ue628"
+						}]
+					}
+				}
+			}
 		}
-	],
+	    ,{
+            "path" : "pages/detail/detail",
+            "style" : {
+							"navigationBarTitleText":"内容页",
+							"app-plus":{
+								"scrollIndicator":"none",
+								"bounce":"none",
+								"titleNView":{
+									"buttons":[
+										{
+											"type":"menu"
+										}
+									]
+								}
+							}
+						}
+        }
+        ,{
+            "path" : "pages/home/home-set/home-set",
+            "style" : {
+							"navigationBarTitleText":"设置"
+						}
+        }
+        ,{
+            "path" : "pages/home/user-reset-password/user-reset-password",
+            "style" : {
+							"navigationBarTitleText":"修改密码"
+						}
+        }
+    ],
 	"globalStyle": {
 		//全局样式
 		"navigationBarTextStyle": "black", //文本颜色

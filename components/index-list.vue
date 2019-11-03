@@ -16,18 +16,21 @@
 					</view>
 				</view>
 			</view>
-			<view class="list-title" @tap="gotoDetail">
-				<view>{{items.title}}</view>
+			<view @tap="gotoDetail">
+				<view class="list-title" >
+					<view>{{items.title}}</view>
+				</view>
+				<!-- 图片 -->
+				<view v-if="items.type === 'img'" class="list-image">
+					<image :src="items.titlepic" mode="widthFix" lazy-load></image>
+				</view>
+				<view v-else class="list-video u-f-aj">
+					<image :src="items.titlepic" mode="widthFix" lazy-load></image>
+					<view class="video-play icon iconfont icon-bofang"></view>
+					<view class="video-playinfo">{{items.playnum + '次播放 ' + items.long}}</view>
+				</view>
 			</view>
-			<!-- 图片 -->
-			<view v-if="items.type === 'img'" class="list-image">
-				<image :src="items.titlepic" mode="widthFix" lazy-load></image>
-			</view>
-			<view v-else class="list-video u-f-aj">
-				<image :src="items.titlepic" mode="widthFix" lazy-load></image>
-				<view class="video-play icon iconfont icon-bofang"></view>
-				<view class="video-playinfo">{{items.playnum + '次播放 ' + items.long}}</view>
-			</view>
+		
 			<view class="list-bottom u-f-a u-f-jsb">
 				<view class="u-f-a">
 					<view class="u-f-a" :class="{active:items.infonum.index === 1}" @tap="ding">
@@ -101,7 +104,10 @@
 				this.items.infonum.cai+=1
 			},
 			gotoDetail(){
-				console.log('进入详情也')
+				uni.navigateTo({
+					url:"../../pages/detail/detail?detailData=" + JSON.stringify(this.item)
+				})
+				// console.log('进入详情也')
 			}
 			
 		}

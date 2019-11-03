@@ -1,9 +1,9 @@
 
-.topic-list.data-v-0c04ecbe {
+.topic-list.data-v-a81976ce {
 	padding: 10rpx 0;
 	border-bottom: 1px solid #eee;
 }
-.topic-list image.data-v-0c04ecbe {
+.topic-list image.data-v-a81976ce {
 	width: 200rpx;
 	height: 200rpx;
 	border-radius: 10rpx;
@@ -12,10 +12,10 @@
 	    -ms-flex-negative: none;
 	        flex-shrink: none;
 }
-.topic-list>view.data-v-0c04ecbe {
+.topic-list>view.data-v-a81976ce {
 	color: #9E9E9E;
 }
-.topic-list>view>view.data-v-0c04ecbe:first-child {
+.topic-list>view>view.data-v-a81976ce:first-child {
 	color: #000000;
 	font-size: 32rpx;
 }

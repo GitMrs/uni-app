@@ -1,0 +1,8 @@
+
+.u-comment-title {
+	padding: 20rpx;
+	font-size: 33rpx;
+	color: #000000;
+	font-weight: bold;
+}
+

@@ -24,6 +24,8 @@
   },
   "usingComponents": {
     "swiper-tab-bar": "/components/tab-bar",
-    "user-list": "/components/user-list"
+    "user-list": "/components/user-list",
+    "load-more": "/components/commom/load-more",
+    "nothing": "/components/commom/nothing"
   }
 }

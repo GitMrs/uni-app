@@ -1,0 +1,1 @@
+<view class="u-f-aj u-f-jsb home-list-item data-v-463257c4" hover-class="home-list-hover" data-event-opts="{{[['tap',[['clickEvent',['$event']]]]]}}" bindtap="__e"><view class="u-f-aj data-v-463257c4"><view class="{{['icon iconfont data-v-463257c4',item.icon?'icon-'+item.icon:'']}}"></view>{{item.name}}</view><view class="icon iconfont icon-jinru data-v-463257c4"></view></view>

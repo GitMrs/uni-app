@@ -1,5 +1,5 @@
 <template>
-	<view class="u-f-a paper-list animated fadeInLeft">
+	<view class="u-f-a paper-list animated fadeInLeft" @tap="openDetail">
 		<view class="u-f-aj">
 			<image :src="item.userpic" mode="widthFix" lazy-load></image>
 		</view>
@@ -27,6 +27,13 @@
 				type: Object
 			},
 			index: Number
+		},
+		methods:{
+			openDetail(){
+				uni.navigateTo({
+					url:"../../pages/user-chat/user-chat"
+				})
+			}
 		}
 	}
 </script>

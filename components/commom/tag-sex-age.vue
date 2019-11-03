@@ -20,11 +20,12 @@
 		background: #007AFF;
 		color: #FFFFFF;
 		height: 20upx;
-		font-size: 16upx;
-		width: 40upx;
+		font-size: 20upx;
+		width: 44upx;
 		padding: 2upx 4upx;
 		border-radius: 20upx;
-		line-height: 22upx;
+		margin-left: 10upx;
+		line-height: 20upx;
 		flex-shrink:0 ;
 	}
 	.icon-nv{

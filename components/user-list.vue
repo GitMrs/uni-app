@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="user-list-wrap animated fadeInLeft" @tap="openDatai">
 		<view class="user-list u-f-aj">
 			<image :src="item.userpic" mode="widthFix" lazy-load></image>
 			<view class="">
@@ -29,14 +29,22 @@
 		methods:{
 			change(){
 				this.isguanzhu = !this.isguanzhu
+			},
+			openDatai(){
+				uni.navigateTo({
+					url:"../../pages/user-chat/user-chat"
+				})
 			}
 		}
 	}
 </script>
 
 <style scoped>
-	.user-list {
+	.user-list-wrap{
 		padding: 20upx;
+	}
+	.user-list {
+		padding: 10px 0;
 		border-bottom: 1px solid #ccc;
 		width: 100%;
 	}
@@ -54,7 +62,7 @@
 	}
 
 	.user-list>view:last-of-type {
-		width: 100upx;
+		width: 30upx;
 		color: #CCCCCC;
 		/* height: ; */
 	}

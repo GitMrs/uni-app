@@ -1,18 +1,19 @@
 
-.tag-sex.data-v-19cfc4fc {
+.tag-sex.data-v-456b2b46 {
 	background: #007AFF;
 	color: #FFFFFF;
 	height: 20rpx;
-	font-size: 16rpx;
-	width: 40rpx;
+	font-size: 20rpx;
+	width: 44rpx;
 	padding: 2rpx 4rpx;
 	border-radius: 20rpx;
-	line-height: 22rpx;
+	margin-left: 10rpx;
+	line-height: 20rpx;
 	-webkit-flex-shrink:0 ;
 	    -ms-flex-negative:0 ;
 	        flex-shrink:0 ;
 }
-.icon-nv.data-v-19cfc4fc{
+.icon-nv.data-v-456b2b46{
 	background: #FF698D !important;
 }
 
