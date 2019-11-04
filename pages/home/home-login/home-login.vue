@@ -96,7 +96,8 @@
 			getCode(){
 				if(this.codeNum > 0) {
 					uni.showToast({
-						title:"不能重复获取"
+						title:"不能重复获取",
+						icon:"none"
 					})
 					return false;
 				}else{
