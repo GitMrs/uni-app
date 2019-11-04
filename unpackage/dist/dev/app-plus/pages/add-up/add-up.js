@@ -1,2 +1,0 @@
-setCssToHead([".",[1],"uni-textarea{ border: 1px solid #ccc; }\n.",[1],"popup_wrap{ width: 80%; font-size: ",[0,22],"; text-align: left; }\n.",[1],"popup_wrap wx-view{ width: 100%; text-align: left; }\n.",[1],"popup_wrap\x3ewx-view wx-image{ width: 75%; }\n.",[1],"popup_wrap wx-view wx-button{ background: #F0AD4E; color: #FFFFFF; margin-top: ",[0,30],"; }\n",],undefined,{path:"./pages/add-up/add-up.wxss"})();
-document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/add-up/add-up.wxml') } }));

@@ -1,2 +1,0 @@
-setCssToHead([".",[1],"u-comment-title { padding: ",[0,20],"; font-size: ",[0,33],"; color: #000000; font-weight: bold; }\n",],undefined,{path:"./pages/detail/detail.wxss"})();
-document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/detail/detail.wxml') } }));

@@ -1,6 +1,6 @@
 <template>
 	<view class="body">
-		<input type="text" v-model="oldPassword" class="uni-input" placeholder="请输入旧密码" />
+		<input type="text" v-model="email" class="uni-input" placeholder="请输入绑定的email" />
 		<input type="text" v-model="newPassword" class="uni-input" placeholder="请输入新密码" />
 		<input type="text" v-model="surePassword" class="uni-input" placeholder="请输入确认密码" />
 		<view><button @tap="submit" :loading="loading" class="user-set-btn" :class="{'user-set-btn-disable':disable}" :disabled="disable">完成</button></view>
@@ -11,7 +11,7 @@
 	export default {
 		data() {
 			return {
-				oldPassword: '',
+				email: '',
 				newPassword: '',
 				surePassword: '',
 				disable: true,
@@ -19,7 +19,7 @@
 			}
 		},
 		watch: {
-			oldPassword(val) {
+			email(val) {
 				this.change()
 			},
 			newPassword(val) {
@@ -32,7 +32,7 @@
 		methods: {
 			change() {
 				
-				if (this.oldPassword && this.newPassword && this.surePassword) {
+				if (this.email && this.newPassword && this.surePassword) {
 					console.log(111)
 					this.disable = false;
 					return;
@@ -42,9 +42,9 @@
 			},
 			check() {
 
-				if (!this.oldPassword || this.oldPassword == '') {
+				if (!this.email || this.email == '') {
 					uni.showToast({
-						title: "旧密码不能为空",
+						title: "邮箱不能为空",
 						icon: "none"
 					})
 					return false;

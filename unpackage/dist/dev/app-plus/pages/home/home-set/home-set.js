@@ -1,2 +1,0 @@
-setCssToHead([".",[1],"home-list { padding: 20px; }\n.",[1],"user-set-btn{ width: 100%; margin: ",[0,20]," 0; background: #FFE933; border: 0; color: #333333; }\n",],undefined,{path:"./pages/home/home-set/home-set.wxss"})();
-document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/home/home-set/home-set.wxml') } }));
