@@ -2,9 +2,11 @@
 	<view>
 		<!-- home -->
 		<template v-if="!isLogin">
+			<view class="u-f-aj desc">登陆之后，体验更多功能</view>
 			<otherLogin />
+			<view class="u-f-aj desc" @tap="goLogin">账号密码登陆 <view class="icon iconfont icon-jinru"></view> </view>
 		</template>
-		<template v-else="isLogin">
+		<template v-else-if="isLogin">
 			<loginInfo :info="useInfo" />
 		</template>
 		<!-- 数据 -->
@@ -36,7 +38,7 @@
 		},
 		data() {
 			return {
-				isLogin: true,
+				isLogin: false,
 				useInfo: {
 					userpic: '../../static/topicpic/7.jpeg',
 					username: '昵称',
@@ -82,10 +84,18 @@
 			}
 		},
 		onNavigationBarButtonTap(e) {
-			e.index === 0 && console.log('点击了menu图标')
+			if(e.index === 0){
+				uni.navigateTo({
+					url:"./home-set/home-set"
+				})
+			}
 		},
-		methods: {
-
+		methods:{
+			goLogin(){
+				uni.navigateTo({
+					url:"../../pages/home/home-login/home-login"
+				})
+			}
 		}
 	}
 </script>
@@ -103,5 +113,8 @@
 
 	.home-list {
 		padding: 20px;
+	}
+	.desc{
+		color: #9E9E9E;
 	}
 </style>

@@ -7,7 +7,7 @@
 				<view class="">总访客 {{info.totalnum}} 今日 {{info.todaynum}}</view>
 			</view>
 		</view>
-		<view class="icon iconfont icon-jinru" @tap="goSet"></view>
+		<view class="icon iconfont icon-jinru" @tap="goInfo"></view>
 	</view>
 </template>
 
@@ -22,9 +22,9 @@
 			}
 		},
 		methods:{
-			goSet(){
+			goInfo(){
 				uni.navigateTo({
-					url:"../../pages/home/home-set/home-set"
+					url:"../../pages/home/home-login/home-login"
 				})
 			}
 		}

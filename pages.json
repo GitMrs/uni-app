@@ -242,6 +242,28 @@
 								"navigationBarTitleText":"资料修改"
 						}
         }
+        ,{
+            "path" : "pages/home/user-set-help/user-set-help",
+            "style" : {
+							"navigationBarTitleText":"意见反馈"
+						}
+        }
+        ,{
+            "path" : "pages/home/user-set-about/user-set-about",
+            "style" : {
+								"navigationBarTitleText":"关于仿糗百"
+						}
+        }
+        ,{
+            "path" : "pages/home/home-login/home-login",
+            "style" : {
+							"app-plus":{
+								"scrollIndicator":"none",
+								"bounce":"none",
+								"titleNView":false
+							}
+						}
+        }
     ],
 	"globalStyle": {
 		//全局样式

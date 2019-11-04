@@ -1,6 +1,5 @@
 <template>
 	<view class="">
-		<view class="u-f-aj">登陆之后，体验更多功能</view>
 		<view class="other-login u-f-aj">
 			<view class="u-f-aj">
 				<view class="icon iconfont icon-weixin"></view>
@@ -12,11 +11,19 @@
 				<view class="icon iconfont icon-xinlangweibo"></view>
 			</view>
 		</view>
-		<view class="u-f-aj">账号密码登陆 <view class="icon iconfont icon-jinru"></view> </view>
 	</view>
 </template>
 
 <script>
+	export default {
+		methods:{
+			goLogin(){
+				uni.navigateTo({
+					url:"../../pages/home/home-login/home-login"
+				})
+			}
+		}
+	}
 </script>
 
 <style scoped>

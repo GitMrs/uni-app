@@ -31,7 +31,6 @@
 		},
 		methods: {
 			change() {
-				
 				if (this.oldPassword && this.newPassword && this.surePassword) {
 					console.log(111)
 					this.disable = false;
@@ -41,7 +40,6 @@
 				return true;
 			},
 			check() {
-
 				if (!this.oldPassword || this.oldPassword == '') {
 					uni.showToast({
 						title: "旧密码不能为空",
