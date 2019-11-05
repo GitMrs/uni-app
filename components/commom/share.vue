@@ -5,7 +5,7 @@
 			<view class="more-share-title u-f-aj">分享到</view>
 			<scroll-view scroll-x="true" class="more-share-body u-f-aj">
 				<block v-for="(item,index) in providerList" :key="index">
-					<view class="more-share-item u-f-aj" hover-class="more-share-hove" @tap="share">
+					<view class="more-share-item u-f-aj" hover-class="more-share-hove" @tap="share(item)">
 						<view class="icon iconfont" :class="['icon-'+ item.zIcon,' more-share-' + item.zClass]"></view>
 						<view>{{item.name}}</view>
 					</view>

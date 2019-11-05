@@ -38,7 +38,7 @@
 		},
 		data() {
 			return {
-				isLogin: false,
+				isLogin: true,
 				useInfo: {
 					userpic: '../../static/topicpic/7.jpeg',
 					username: '昵称',

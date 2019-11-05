@@ -335,7 +335,6 @@
 					let height = res.windowHeight - uni.upx2px(100);
 					this.swiperHeight = height;
 					console.log(this.swiperHeight)
-
 				}
 			})
 		},

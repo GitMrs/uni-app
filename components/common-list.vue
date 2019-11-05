@@ -1,6 +1,6 @@
 <template>
 	<view class="commom-list u-f animated fadeInLeft">
-		<view class="commom-list-l">
+		<view class="commom-list-l" @tap="openUserSpace">
 			<image :src="item.userpic" mode="widthFix" lazy-load></image>
 		</view>
 		<view class="commom-list-r">
@@ -97,6 +97,13 @@
 			return {
 
 			};
+		},
+		methods:{
+			openUserSpace(){
+				uni.navigateTo({
+					url:"../../pages/home/user-detail/user-detail"
+				})
+			}
 		}
 	}
 </script>

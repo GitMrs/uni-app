@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="body">
 		<!-- 内容 -->
 		<detail-info :item="item"></detail-info>
 		<!-- 评论 -->
@@ -32,7 +32,7 @@
 		},
 		data() {
 			return {
-				shareshow:false,
+				shareshow: false,
 				content: {
 					count: 20,
 					list: [{
@@ -74,7 +74,7 @@
 					title: "图文",
 					type: 1, //0 为文字，1 为图文，2 为视频 3，分享
 					img: true,
-					morePic: ["../../static/datapic/22.jpg"],
+					morePic: ["../../static/datapic/22.jpg","../../static/datapic/22.jpg"],
 					video: false,
 					share: false,
 					addree: "	深圳 龙岗",
@@ -93,24 +93,24 @@
 			e.index === 0 && this.togle()
 		},
 		methods: {
-			initData(obj){
+			initData(obj) {
 				uni.setNavigationBarTitle({
-					title:obj.title
+					title: obj.title
 				})
 			},
 			//打开分享框
-			togle(){
+			togle() {
 				this.shareshow = !this.shareshow;
 			},
 			//发表评论
 			submit(data) {
 				let obj = {
-						fid: 1,
-						userpic: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/uni@2x.png',
-						username: '小猫咪',
-						time: '11:34',
-						data: data,
-					}
+					fid: 1,
+					userpic: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/uni@2x.png',
+					username: '小猫咪',
+					time: '11:34',
+					data: data,
+				}
 				this.content.list.push(obj)
 			}
 		}
@@ -118,10 +118,15 @@
 </script>
 
 <style>
+	.body {
+		box-sizing: border-box;
+	}
+
 	.u-comment-title {
 		padding: 20upx;
 		font-size: 33upx;
 		color: #000000;
+		box-sizing: border-box;
 		font-weight: bold;
 	}
 </style>

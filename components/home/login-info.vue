@@ -24,7 +24,7 @@
 		methods:{
 			goInfo(){
 				uni.navigateTo({
-					url:"../../pages/home/home-login/home-login"
+					url:"../../pages/home/user-detail/user-detail"
 				})
 			}
 		}

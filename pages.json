@@ -264,6 +264,26 @@
 							}
 						}
         }
+        ,{
+            "path" : "pages/home/user-detail/user-detail",
+            "style" : {
+							"navigationBarTitleText":"个人空间",
+							"enablePullDownRefresh":true,
+							"app-plus":{
+								"scrollIndicator":"none",
+								"bounce":"none",
+								"titleNView":{
+									"type":"transparent",
+									"buttons":[
+										{
+											"type":"menu",
+											"float":"right"
+										}
+									]
+								}
+							}
+						}
+        }
     ],
 	"globalStyle": {
 		//全局样式

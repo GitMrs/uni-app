@@ -22,7 +22,7 @@
 		height: 20upx;
 		font-size: 20upx;
 		width: 44upx;
-		padding: 2upx 4upx;
+		padding: 2upx 6upx;
 		border-radius: 20upx;
 		margin-left: 10upx;
 		line-height: 20upx;

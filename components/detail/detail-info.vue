@@ -19,7 +19,7 @@
 			<view>
 				{{item.title}}
 			</view>
-			<view class="u-f-aj">
+			<view class="">
 				<block v-if="item.type === 0">
 					<view class="u-f-aj">
 						<view class="">
@@ -28,17 +28,20 @@
 					</view>
 				</block>
 				<block v-if="item.type === 1">
-					<view style="flex-direction: column;">
+					<view class="u-f-a" style="flex-direction: column">
+						
 						<block v-for="(pic,index) in item.morePic" :key="index">
-							<image :src="pic" mode="widthFix" @tap="imageDatail(index)" style="margin-bottom: 15upx;border-radius: 20upx;" lazy-load> </image>
+							<image :src="pic" mode="widthFix" @tap="imageDatail(index)"  lazy-load> </image>
 						</block>
 					</view>
 				</block>
 				<block v-if="item.type === 2">
-					<image :src="item.titlepic" mode="widthFix" lazy-load> </image>
-					<view class="commom-list-play icon iconfont icon-bofang"></view>
-					<view class="commom-list-playinfo">
-						{{item.video.lonknum}} 次播放 {{item.video.long}}
+					<view class="u-f-aj">
+						<image :src="item.titlepic" mode="widthFix" lazy-load> </image>
+						<view class="commom-list-play icon iconfont icon-bofang"></view>
+						<view class="commom-list-playinfo">
+							{{item.video.lonknum}} 次播放 {{item.video.long}}
+						</view>
 					</view>
 				</block>
 				<block v-if="item.type === 3">
@@ -101,7 +104,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	@import url("../../common/list.css");
 
 	.commom-list-r .commom-list-r-time {
@@ -111,7 +114,10 @@
 		/* float: left;
 	margin-top: -10px; */
 	}
-
+	.commom-list-r image{
+		width: 100%;
+		margin-bottom: 20upx;
+	}
 	.guanzhu {
 		background: #EEEEEE;
 		font-size: 26upx;
