@@ -1,0 +1,30 @@
+/* 公共按钮 */
+.body{
+	padding: 20rpx;
+}
+.user-set-btn {
+	width: 100%;
+	margin: 20rpx 0;
+	background: #FFE933;
+	border: 0;
+	color: #333333;
+}
+.uni-input{
+	padding: 10rpx;
+	border-bottom: 1px solid #EEEEEE;
+}
+.user-set-btn-disable{
+	background: #F4F4F4;
+	border: 1px solid #CCCCCC;
+	color: #909090;
+	pointer-events: disable;
+}
+.content {
+	padding: 20rpx;
+	background: #FFFFFF;
+	text-indent: 20rpx;
+	font-size: 30rpx;
+	line-height: 60rpx;
+	color: #C0C0C0;
+}
+

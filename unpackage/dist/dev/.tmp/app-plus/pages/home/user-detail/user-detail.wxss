@@ -1,0 +1,26 @@
+
+.user-space-desc {
+	border-radius: 10rpx 10rpx 0 0;
+	background: #FFFFFF;
+	position: relative;
+	z-index: 10;
+	margin-top: -55rpx;
+	width: 100%;
+}
+.user-space-info {
+	padding: 0 30rpx;
+}
+.user-space-item {
+	padding: 20rpx 0;
+	color: ;
+	border-bottom: 1px solid #EEEEEE;
+}
+.user-space-item>view {
+	color: #AAAAAA;
+}
+.user-space-item>view:first-child {
+	color: #333333;
+	font-size: 35rpx;
+	padding: 15rpx 0;
+}
+

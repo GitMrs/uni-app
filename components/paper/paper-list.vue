@@ -1,5 +1,5 @@
 <template>
-	<view class="u-f-a paper-list animated fadeInLeft" @tap="openDetail">
+	<view class="u-f-a paper-list animated fadeIn fast" @tap="openDetail">
 		<view class="u-f-aj">
 			<image :src="item.userpic" mode="widthFix" lazy-load></image>
 		</view>

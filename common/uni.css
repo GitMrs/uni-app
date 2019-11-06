@@ -1458,3 +1458,7 @@ radio-group label, checkbox-group label{
 	.u-f-jsb{
 		justify-content: space-between;
 	}
+	/* 解决图片闪的问题 */
+	image{ 
+		will-change:transform ;
+	}

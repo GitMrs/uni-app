@@ -1,5 +1,7 @@
 <template>
 	<view>
+		<!-- 操作菜单 -->
+		<userPopup :show="show" @hidePopup="hidePopup" @lahei="lahei" @beizhu="beizhu" />
 		<!-- 上部信息 -->
 		<userSpaceHead :item="userInfo" />
 		<!-- 统计 -->
@@ -13,7 +15,29 @@
 		<!-- 列表 -->
 		<view class="topic-detail-list">
 			<block v-for="(items,index) in tablist" :key="index">
-				<template v-if="currentIndex == index">
+				<template v-if="currentIndex === 0">
+					<!-- 主页 -->
+					<view class="animated fadeInLeft ">
+						<view class="user-space-info">
+							<view class="user-space-item">
+								<view class="">账号信息</view>
+								<view class="">糗龄：150天</view>
+								<view class="">糗百ID：1110001</view>
+							</view>
+						</view>
+						<view class="user-space-info">
+							<view class="user-space-item">
+								<view class="">个人信息</view>
+								<view class="">星座：天鸟座</view>
+								<view class="">职业：IT</view>
+								<view class="">故乡：天鸟星</view>
+								<view class="">情感：未知</view>
+							</view>
+						</view>
+
+					</view>
+				</template>
+				<template v-else-if="currentIndex == index ">
 					<block v-for="(item,index_list) in items.list" :key="index_list">
 						<commomList :item="item" :index="index_list" />
 					</block>
@@ -30,6 +54,7 @@
 	import homeData from '../../../components/home/home-data.vue';
 	import TabBar from "../../../components/tab-bar.vue";
 	import LoadMore from "../../../components/commom/load-more.vue";
+	import userPopup from '../../../components/user-space/user-popup.vue';
 	import commomList from "../../../components/common-list.vue"
 	export default {
 		components: {
@@ -37,10 +62,12 @@
 			homeData,
 			LoadMore,
 			commomList,
-			TabBar
+			TabBar,
+			userPopup
 		},
 		data() {
 			return {
+				show:false,
 				currentIndex: 0,
 				tabBar: [{
 						name: "主页"
@@ -356,6 +383,9 @@
 
 			}
 		},
+		onNavigationBarButtonTap(e) {
+			e.index === 0 && this.openPopup()
+		},
 		// 上拉触底加载
 		onReachBottom() {
 			this.loadMore(this.currentIndex)
@@ -365,6 +395,16 @@
 			this.getData();
 		},
 		methods: {
+			hidePopup(){
+				this.show = false;
+			},
+			openPopup(){
+				this.show = true;
+			},
+			//拉黑
+			lahei(){},
+			//备注
+			beizhu(){},
 			changeTab(index) {
 				this.currentIndex = index
 			},
@@ -455,5 +495,25 @@
 		z-index: 10;
 		margin-top: -55upx;
 		width: 100%;
+	}
+
+	.user-space-info {
+		padding: 0 30upx;
+	}
+
+	.user-space-item {
+		padding: 20upx 0;
+		color: ;
+		border-bottom: 1px solid #EEEEEE;
+	}
+
+	.user-space-item>view {
+		color: #AAAAAA;
+	}
+
+	.user-space-item>view:first-child {
+		color: #333333;
+		font-size: 35upx;
+		padding: 15upx 0;
 	}
 </style>

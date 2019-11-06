@@ -17,7 +17,25 @@
 					case 'navigateto' :
 						if(this.item.url){ uni.navigateTo({url:this.item.url})}
 					break;
+					case 'clear':
+						this.clear()
+					break;
 				}
+			},
+			clear(){
+				uni.showModal({
+						title:"提示",
+						content:"是否要清楚缓存？",
+						confirmText:"立即清除",
+						success:res => {
+							if(res.confirm){
+								uni.clearStorage();
+								uni.showToast({
+									title:"清楚缓存成功"
+								})
+							}
+						}
+				})
 			}
 		}
 	}

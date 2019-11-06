@@ -129,6 +129,8 @@
 			"path": "pages/add-up/add-up",
 			"style": {
 				"app-plus": {
+					"animationType":"slide-in-bottom",
+					"animationDuration":200,
 					"titleNView": false //禁用原生导航
 				}
 			}
@@ -145,6 +147,8 @@
 			"style": {
 				"enablePullDownRefresh": true, // 开启下拉刷新
 				"app-plus": {
+					"animationType":"slide-in-bottom",
+					"animationDuration":200,
 					"scrollIndicator": "none", //隐藏滚动
 					"bounce": "none",
 					"titleNView": {

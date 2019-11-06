@@ -20,7 +20,7 @@
 					{name:'邮箱绑定',clicktype:'navigateto',url:'../user-set-email/user-set-email'},
 					{name:'资料编辑',clicktype:'navigateto',url:'../user-set-info/user-set-info'},
 					{name:'小纸条'},
-					{name:'清除缓存'},
+					{name:'清除缓存',clicktype:'clear',url:''},
 					{name:'意见反馈',clicktype:'navigateto',url:'../user-set-help/user-set-help'},
 					{name:'关于仿糗百',clicktype:'navigateto',url:'../user-set-about/user-set-about'},
 				]

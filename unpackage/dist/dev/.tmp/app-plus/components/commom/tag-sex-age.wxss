@@ -1,0 +1,19 @@
+
+.tag-sex.data-v-19cfc4fc {
+	background: #007AFF;
+	color: #FFFFFF;
+	height: 20rpx;
+	font-size: 20rpx;
+	width: 44rpx;
+	padding: 2rpx 6rpx;
+	border-radius: 20rpx;
+	margin-left: 10rpx;
+	line-height: 20rpx;
+	-webkit-flex-shrink:0 ;
+	    -ms-flex-negative:0 ;
+	        flex-shrink:0 ;
+}
+.icon-nv.data-v-19cfc4fc{
+	background: #FF698D !important;
+}
+

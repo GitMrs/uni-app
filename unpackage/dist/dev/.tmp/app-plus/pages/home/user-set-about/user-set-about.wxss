@@ -1,0 +1,40 @@
+/* 公共按钮 */
+.body{
+	padding: 20rpx;
+}
+.user-set-btn {
+	width: 100%;
+	margin: 20rpx 0;
+	background: #FFE933;
+	border: 0;
+	color: #333333;
+}
+.uni-input{
+	padding: 10rpx;
+	border-bottom: 1px solid #EEEEEE;
+}
+.user-set-btn-disable{
+	background: #F4F4F4;
+	border: 1px solid #CCCCCC;
+	color: #909090;
+	pointer-events: disable;
+}
+.top {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	margin-top: 30rpx;
+	margin-bottom: 60rpx;
+}
+.top image {
+	width: 80%;
+}
+.top>view {
+	color: #989898;
+}
+.home-list {
+	padding: 20px;
+}
+

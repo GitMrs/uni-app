@@ -1,0 +1,1 @@
+<view><view class="top u-f-aj"><image src="../../../static/common/logo.png" mode="widthFix" lazy-load></image><view>version1.0.0</view></view><view><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="index"><block><home-list vue-id="{{'1-'+index}}" item="{{item}}" index="{{index}}" bind:__l="__l"></home-list></block></block></view></view>

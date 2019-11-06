@@ -1,0 +1,41 @@
+/* 公共按钮 */
+.body{
+	padding: 20rpx;
+}
+.user-set-btn {
+	width: 100%;
+	margin: 20rpx 0;
+	background: #FFE933;
+	border: 0;
+	color: #333333;
+}
+.uni-input{
+	padding: 10rpx;
+	border-bottom: 1px solid #EEEEEE;
+}
+.user-set-btn-disable{
+	background: #F4F4F4;
+	border: 1px solid #CCCCCC;
+	color: #909090;
+	pointer-events: disable;
+}
+.home-set-list {
+	padding: 20rpx;
+	color: #989898;
+	border-bottom: 1px solid #E5E5E5;
+}
+.home-set-list>view {
+	font-size: 26rpx;
+}
+.home-set-list>view:last-child image {
+	height: 100rpx;
+	width: 100rpx;
+	border-radius: 100%;
+}
+.home-set-list>view:last-child>view:first-child {
+	color: #000000;
+}
+.home-set-list>view:last-child>view:last-child {
+	margin-left: 20rpx;
+}
+

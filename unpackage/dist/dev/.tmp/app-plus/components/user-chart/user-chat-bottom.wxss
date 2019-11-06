@@ -1,0 +1,32 @@
+
+.user-chat-bottom{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 120rpx;
+	width: 100%;
+	padding: 0 20rpx;
+	background-color: #FFFFFF;
+	border-top: 1px solid #EEEEEE;
+}
+.user-chat-bottom>input{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	-webkit-flex-shrink: 0;
+	    -ms-flex-negative: 0;
+	        flex-shrink: 0;
+	background: #F7F7F7;
+	margin-right: 20rpx;
+	padding-left: 3rpx;
+	height: 80rpx;
+	border-radius: 10rpx;
+}
+.user-chat-bottom>view{
+	width: 60px;
+	color: #000000;
+	font-size: 60rpx;
+}
+

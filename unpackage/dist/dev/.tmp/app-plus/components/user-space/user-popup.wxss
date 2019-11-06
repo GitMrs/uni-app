@@ -1,0 +1,30 @@
+
+.paper-left-popup.data-v-95298a7a{
+	position: fixed;
+	right: 0;
+	top: 130rpx;
+	background: #FFFFFF;
+	z-index: 2000;
+	width: 55%;
+	-webkit-box-shadow: 1rpx 1rpx 20rpx 2rpx #CCCCCC;
+	        box-shadow: 1rpx 1rpx 20rpx 2rpx #CCCCCC;
+}
+.paper-left-popup-mask.data-v-95298a7a{
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1999;
+}
+.paper-left-popup>view.data-v-95298a7a{
+	padding:20rpx;
+	font-size: 35rpx;
+}
+.paper-left-popup>view>view.data-v-95298a7a{
+	padding-left: 10rpx;
+}
+.paper-left-popup-h.data-v-95298a7a{
+	background: #EEEEEE;
+}
+

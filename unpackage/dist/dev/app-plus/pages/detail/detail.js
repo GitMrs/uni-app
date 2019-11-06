@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"body { -webkit-box-sizing: border-box; box-sizing: border-box; }\n.",[1],"u-comment-title { padding: ",[0,20],"; font-size: ",[0,33],"; color: #000000; -webkit-box-sizing: border-box; box-sizing: border-box; font-weight: bold; }\n",],undefined,{path:"./pages/detail/detail.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/detail/detail.wxml') } }));
